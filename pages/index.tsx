@@ -75,8 +75,12 @@ const Home: NextPage = () => {
                   <div key={`result-${index}`} className="py-2">
                     <h2 className="text-lg font-bold">
                       Object Type: {result.objectType}
-                      <br />
-                      Object Name: {result.title}
+                      {result.objectType !== 'People' && (
+                        <>
+                          <br />
+                          Object Name: {result.title}
+                        </>
+                      )}
                     </h2>
                     {result.peoples?.length > 0 && (
                       <div>
