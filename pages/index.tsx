@@ -82,6 +82,7 @@ const Home: NextPage = () => {
                         </>
                       )}
                     </h2>
+                    {result.peoples?.length === 0 && <>No People found</>}
                     {result.peoples?.length > 0 && (
                       <div>
                         {result.objectType !== 'People' && (
