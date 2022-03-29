@@ -129,7 +129,7 @@ export default async function handler(
         }
         if (vehiclesData.count > 0) {
           for (const vehicle of vehiclesData.results) {
-            const peoples = await getPeopleFromResponse(vehicle.residents);
+            const peoples = await getPeopleFromResponse(vehicle.pilots);
             results.push({
               objectType: 'Vehicle',
               title: vehicle.name,
