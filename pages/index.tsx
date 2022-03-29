@@ -72,14 +72,18 @@ const Home: NextPage = () => {
             {results && (
               <div>
                 {results.map((result: any, index: number) => (
-                  <div key={`result-${index}`}>
+                  <div key={`result-${index}`} className="py-2">
                     <h2 className="text-lg font-bold">
                       Object Type: {result.objectType}
+                      <br />
+                      Object Name: {result.title}
                     </h2>
                     {result.peoples?.length > 0 && (
                       <div>
                         {result.objectType !== 'People' && (
-                          <h3 className="font-bold py-2">Related Peoples</h3>
+                          <>
+                            <h3 className="font-bold py-2">Related Peoples</h3>
+                          </>
                         )}
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
                           {result.peoples.map((people: any, index: number) => {
