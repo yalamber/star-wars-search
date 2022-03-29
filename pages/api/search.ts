@@ -118,7 +118,6 @@ export default async function handler(
         }
         if (starshipsData.count > 0) {
           for (const starship of planetsData.results) {
-            console.log('ship', starship);
             const peoples = await getPeopleFromResponse(starship.pilots);
             results.push({
               objectType: 'Starships',
