@@ -72,7 +72,7 @@ const Home: NextPage = () => {
             {results && (
               <div>
                 {results.map((result: any, index: number) => (
-                  <div key={`result-${index}`} className="py-2">
+                  <div key={`result-${index}`} className="py-6 border-b-2">
                     <h2 className="text-lg font-bold">
                       Object Type: {result.objectType}
                       {result.objectType !== 'People' && (
