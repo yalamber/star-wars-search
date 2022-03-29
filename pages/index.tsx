@@ -18,6 +18,7 @@ const Home: NextPage = () => {
           setResults(null);
           const response = await fetch(`/api/search?q=${debouncedSearchTerm}`);
           const data = await response.json();
+          console.log(data);
           setResults(data);
         } catch (e) {
           setError(e);

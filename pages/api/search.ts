@@ -13,6 +13,7 @@ async function searchRequest(path: string, query: string) {
 }
 
 async function getPeopleFromResponse(data: any) {
+  if (!data) return [];
   const peopleReqPromises: Array<any> = [];
   data.forEach((people: string) => {
     peopleReqPromises.push(fetch(people));
@@ -117,6 +118,7 @@ export default async function handler(
         }
         if (starshipsData.count > 0) {
           for (const starship of planetsData.results) {
+            console.log('ship', starship);
             const peoples = await getPeopleFromResponse(starship.pilots);
             results.push({
               objectType: 'Starships',
