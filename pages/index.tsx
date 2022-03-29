@@ -15,6 +15,7 @@ const Home: NextPage = () => {
       (async () => {
         try {
           setSearching(true);
+          setResults(null);
           const response = await fetch(`/api/search?q=${debouncedSearchTerm}`);
           const data = await response.json();
           setResults(data);
